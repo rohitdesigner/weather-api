@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <style>
+        td {
+            text-transform: uppercase;
+            color: teal
+        }
+        
+        table {
+            display: none;
+        }
+        
+        img {
+            height: 30px;
+        }
+        
+        .hi {
+            height: 0px;
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="semantic/dist/semantic.css">
+    <script src="semantic/dist/semantic.js">
+    </script>
+    <script src="assets/jquery-1.8.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/async.js">
+    </script>
+</head>
+
+<body>
+    <div class="ui container" style="margin-top:50px">
+        <div class='ui segment teal'>
+            <div class="ui header teal ">SELECT YOUR CITY</div>
+            <div class="ui divider blue "></div>
+            <div class='ui action input fluid'>
+                <input type="text " name="city " placeholder="enter name of city " id="city">
+                <button class="ui teal right labeled icon button" id="submit">
+    <i class="arrow right icon"></i>
+    Copy
+  </button>
+            </div>
+        </div>
+        <div class='ui segment primary hi blue' id="area">
+            <table class="ui red table">
+                <thead>
+                    <tr>
+                        <th><span class="ui sub header">CITY</span></th>
+                        <th><span class="ui sub header">TEMPERATURE</span></th>
+                        <th><span class="ui sub header">WEATHER</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="citys"></td>
+                        <td id="tem"> </td>
+                        <td id="weathers">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
