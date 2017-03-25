@@ -7,24 +7,23 @@ $(document).ready(function() {
 
         $("#submit").addClass("loading disabled");
         $("#area").fadeIn();
-        $('#area').animate({ height: '200px' });
+        // $('#area').animate({ height: '200px' });
         var http = new XMLHttpRequest;
         http.onreadystatechange = function() {
             if (http.status == 200 && http.readyState == 4) {
                 var data = JSON.parse(http.response);
-
-                $('#area').animate({ height: '200px' });
-                $("submit").removeClass("loading");
+                var le = $('area').css('height') + 90;
+                //$('#area').animate({ height: '200px' });
+                // $("submit").removeClass("loading");
                 $('table').fadeIn();
-                $(this).removeClass("loading");
+                $("#submit").removeClass("loading disabled");
                 // console.log(data);
+                document.getElementById("city").value = "";
                 var weather = data.weather[0].description;
-                var temperature = Math.round(data.main.temp_max - 272.5);
-                document.getElementById("citys").innerHTML = city;
+                var temperature = Math.round(data.main.temp_max - 272.5) + "<sup>o</sup> <b>C</b>";
                 var icon = "<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'  >"
-                document.getElementById("weathers").innerHTML = data.weather[0].description + " " + icon;
-
-                document.getElementById("tem").innerHTML = temperature;
+                    //-------------
+                $('tbody').append("<tr><td>" + city + "</td><td>" + temperature + "</td><td>" + weather + " " + icon + "</td></tr>");
 
             }
         }
