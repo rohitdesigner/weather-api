@@ -29,7 +29,7 @@ $(document).ready(function() {
             }
         }
         var city = document.getElementById("city").value;
-        var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=406038b64f014f7948945a21b558769a";
+        var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=406038b64f014f7948945a21b558769a";
         http.open('get', url);
         http.send();
     });
