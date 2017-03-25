@@ -10,6 +10,7 @@ $(document).ready(function() {
         // $('#area').animate({ height: '200px' });
         var http = new XMLHttpRequest;
         http.onreadystatechange = function() {
+            console.log(http.readyState);
             if (http.status == 200 && http.readyState == 4) {
                 var data = JSON.parse(http.response);
                 var le = $('area').css('height') + 90;
